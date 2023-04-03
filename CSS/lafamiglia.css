@@ -1,0 +1,16 @@
+img[alt*="pic"]{
+	object-fit: contain;
+	display: block;
+	margin: 25px auto;
+}
+
+button {
+    display: block;
+    margin: 30px auto;
+    width: 30%;
+    height: 200px;
+    background-color: red;
+    font-size: 40px;
+    margin-top: 50px;
+}
+

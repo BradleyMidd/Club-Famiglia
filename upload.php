@@ -1,0 +1,127 @@
+<?php
+//Start de sessie
+session_start();
+?>
+<!doctype html>
+<html>
+<head>
+	<link href="CSS/base_logged.css" rel="stylesheet" type="text/css">
+	<link href="CSS/upload.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../JS/jquery.js"></script>
+	<script src="JS/burger.js"></script>
+	<meta charset="UTF-8">
+	<title>Upload</title>
+</head>
+
+<body>
+	<?php
+    //Voeg het bestand config.php toe:
+	require 'config.php';
+	
+	//Voeg het bestand sessie.php toe:
+	require('session.php');
+
+    //Pak de id uit het url
+	$ID = $_GET['id'];
+	
+    //Maak een query aan om de id te selecteren
+	$query = "SELECT * FROM Club_register WHERE ID = " . $ID;
+	
+    //Maak de resultaat van de id werkend in mysqli
+	$resultaat = mysqli_query($mysqli, $query);
+	
+    //Pak de array van de table uit de database
+	$rij = mysqli_fetch_array($resultaat);
+
+        
+    ?>
+<header>
+    <!--Zet de logo van de happy italy in de header-->		
+	<img src="images/logo-happyitaly.svg" alt="logo">
+	
+	    <!--Positioneer de burger naar de linkerkant van de navigatiebar-->
+		<div class="pos">
+			<div class="burger"></div>
+			<div class="burger"></div>
+			<div class="burger"></div>
+		</div>
+	
+    <!--Rechtsboven komt er je profiel foto te staan met verschillende ranks-->	
+	<div class="avatar">
+					<?php
+		//Als de gebruiker ingelogd is dan is zijn profiel foto zichbaar
+		if(isset($rij['Gebruikersnaam']))
+		{
+			//Als de gebruiker meer dan 100 punten heeft dan is de user een capo di tutti capi
+			if ($rij['Punten'] > 100) 
+			{
+				echo "<img src='Club Famiglia_beeldmateriaal/capo_di_tutti_capi.png' alt='associate' width='125px' height='125px' style='position: relative; left: 10%;top: 6px;'>";
+			} 
+			//Als de gebruiker meer dan 50 punten heeft dan is de user een don
+			else if ($rij['Punten'] > 50) 
+			{
+				echo "<img src='Club Famiglia_beeldmateriaal/don.png' alt='associate' width='125px' height='125px' style='position: relative; left: 10%;top: 6px;'>";
+			} 
+			//Als de gebruiker meer dan 25 punten heeft dan is de user een capo
+			else if ($rij['Punten'] > 25) 
+			{
+				echo "<img src='Club Famiglia_beeldmateriaal/capo.png' alt='associate' width='125px' height='125px' style='position: relative; left: 10%;top: 6px;'>";
+			} 
+			//Als de gebruiker meer dan 0 punten heeft dan is de user een associate
+			else if ($rij['Punten'] >= 0)
+			{
+				echo "<img src='Club Famiglia_beeldmateriaal/associate.png' alt='associate' width='125px' height='125px' style='position: relative; left: 10%;top: 6px;'>";
+			}
+		}
+				  ?>
+	</div>
+
+</header>
+	
+<nav>
+	<!--Als op de burger klikt dan komt er de burger zelf en links naar bepaalde pagina's -->
+	<div class="pos">
+		<div class="burger"></div>
+		<div class="burger"></div>
+		<div class="burger"></div>
+	</div>
+			
+		<ul>
+			<?php
+			    //Als de gebruiker ingelogd is dan heeft hij toegang tot profiel, upload en de user kan uitloggen
+				echo '<a href="homepage.php?id='.$ID.'"><li>Home</li></a>';
+				echo '<hr>';
+				echo '<a href="lafamiglia.php?id='.$ID.'"><li>LaFamiglia</li></a>';
+				echo '<hr>';
+				echo '<a href="galleria.php?id='.$ID.'"><li>Galleria</li></a>';
+				echo '<hr>';
+				echo '<a href="login.php?id='.$ID.'"><li>Login</li></a>';
+				echo '<hr>';
+				echo '<a href="profiel.php?id='.$ID.'"><li>Profiel</li></a>';
+				echo '<hr>';
+				echo '<a href="loguit.php?id='.$ID.'"><li>Loguit</li></a>';
+				echo '<hr>';
+			?>
+		</ul>
+</nav>
+	
+<main class="stretch">
+	<center>
+        <!--Kies een file-->
+		<form method="POST" action="up.php" enctype="multipart/form-data">
+			<label for="file"> Pick a file :  </label>
+			<input type="file" name ="file"> 
+			<input type="submit" value = "Upload">
+		</form>
+	</center>
+</main>
+	
+	
+<footer>
+	<!--Hier komt u contact te staan (dus bijvoorbeeld nummer, email of social media)-->
+	<p>Contact:</p>
+</footer>
+
+</body>
+</html>

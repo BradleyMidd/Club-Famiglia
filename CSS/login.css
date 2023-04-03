@@ -1,0 +1,65 @@
+ul{
+	position: relative;
+	top: 450px;
+}
+
+fieldset{
+	border-style: none;
+}
+
+input {
+    border: 1px solid black;
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 100px;
+    float: right;
+    position: relative;
+    bottom: 180px;
+    right: 17%;
+	font-size: 50px;
+}
+
+legend{
+	font-size: 100px;
+    text-align: center;
+	position: relative;
+	top: 120px;
+}
+
+label[for*="Gebruikersnaam"]{
+	position: relative;
+	bottom: 200px;
+}
+
+input[name*="pass"] {
+    position: relative;
+    bottom: 100px;
+}
+
+label[for*="Wachtwoord"]{
+	position: relative;
+	bottom: 100px;
+}
+
+button {
+    background-color: red;
+    width: 250px;
+    height: 150px;
+    box-shadow: 2px 2px 2px 2px black;
+    font-size: 50px;
+    position: relative;
+    top: 150px;
+    left: 34%;
+}
+
+main a {
+    color: black;
+    position: relative;
+    top: 200px;
+    left: 16%;
+}
+
+input:focus{
+	
+}

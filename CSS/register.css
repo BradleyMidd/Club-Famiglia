@@ -1,0 +1,88 @@
+ul{
+	position: relative;
+	top: 450px;
+}
+
+fieldset{
+	border-style: none;
+}
+
+input {
+    border: 1px solid black;
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 100px;
+    float: right;
+    position: relative;
+    bottom: 180px;
+    right: 17%;
+	font-size: 50px;
+}
+
+legend{
+	font-size: 100px;
+    text-align: center;
+	position: relative;
+    top: 100px;
+}
+
+label[for*="Gebruikersnaam"]{
+	position: relative;
+	bottom: 200px;
+}
+
+input[name*="pass"] {
+    position: relative;
+    bottom: 150px;
+}
+
+label[for*="Email"]{
+    position: relative;
+    bottom: 60px;
+}
+
+label[for*="Wachtwoord"]{
+    position: relative;
+    bottom: 150px;
+}
+
+input[name*="email"]{
+	position: relative;
+	bottom: 60px;
+}
+
+label[for*="Adres"]{
+	position: relative;
+	top: 15px;
+}
+
+input[name*="adres"]{
+	position: relative;
+	top: 5px;
+}
+
+input[name*="bs"]{
+	position: relative;
+	top: 0px;
+}
+
+input[name*="date"]{
+	position: relative;
+	top: 0px;
+}
+
+button {
+    background-color: red;
+    width: 250px;
+    height: 150px;
+    box-shadow: 2px 2px 2px 2px black;
+    font-size: 50px;
+    position: relative;
+    top: 300px;
+    left: 34%;
+}
+
+section{
+	height: 2000px;
+}

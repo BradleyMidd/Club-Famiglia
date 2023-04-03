@@ -1,0 +1,117 @@
+html, body{
+	margin: 0px;
+}
+
+img[alt*="logo"]{
+	display: block;
+	margin: 0 auto;
+	width: 30%;
+	height: 30%;
+}
+
+header{
+	background-color: black;
+}
+
+.burger{
+  width: 80px;
+  height: 10px;
+  background-color: white;
+  margin: 6px 0;
+  position: relative;
+  top: 0px;
+}
+
+.pos{
+  position: absolute;
+  top: 5px;
+  padding: 30px;
+}
+
+nav{
+	width: 75%;
+	height: 100vh;
+	background-color: black;
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+}
+
+nav li{
+	color: white;
+}
+
+ul{
+	list-style-type: none;
+}
+
+nav ul {
+    position: relative;
+    top: 150px;
+
+}
+
+li{
+	color: black;
+	font-size: 50px;
+	padding: 10px;
+}
+
+a{
+	text-decoration-line: none;
+}
+
+label{
+	font-size: 55px;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+
+.stretch {
+	flex: 1;
+}
+
+footer{
+	width: 100%;
+	height: 100px;
+	background-color: black;
+}
+
+footer p{
+	color: white;
+	font-size: 35px;
+}
+
+.avatar{
+    border: 1px solid red;
+	background-color: white;
+	border-radius: 50%;
+    height:150px;
+    width:150px;
+	position: absolute;
+	top: 1%;
+	right: 1%;
+}
+
+.log{
+	background-color: red;
+	width: 100%;
+	height: 100px;
+	margin-top: 20px;
+	box-shadow: 2px 3px 3px 2px black;
+}
+
+.log p{
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	margin: 15px 0px;
+}

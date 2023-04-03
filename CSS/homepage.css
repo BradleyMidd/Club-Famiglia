@@ -1,0 +1,27 @@
+img[alt*="mainfoto"]{
+	width: 100%;
+	margin-top: 20px;
+	display: block;
+}
+
+section{
+	display: block;
+	width: 100%;
+	background-color: rgba(126,126,126,0.50);
+	margin: 20px 0;
+	
+}
+
+.text p{
+	opacity: 1;
+	margin: 0 auto;
+	font-size: 40px;
+	padding: 50px;
+}
+
+@media only screen and (max-height: 1024px){
+	
+	section{
+		height: 200px;
+	}
+}
